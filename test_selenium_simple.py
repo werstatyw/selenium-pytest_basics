@@ -31,12 +31,12 @@ def test_search_example(selenium):
 
     # Enter the text for search:
     search_input.clear()
-    search_input.send_keys('my first selenium test for Web UI!')
+    search_input.send_keys('first test')
 
     time.sleep(10)  # just for demo purposes, do NOT repeat it on real projects!
 
     # Click Search:
-    search_button = selenium.find_element_by_xpath("(//input[@name='btnK'])[2]")
+    search_button = selenium.find_element_by_name("btnK")
     search_button.click()
 
     time.sleep(10)  # just for demo purposes, do NOT repeat it on real projects!
