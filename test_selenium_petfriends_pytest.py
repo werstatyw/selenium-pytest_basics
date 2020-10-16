@@ -36,12 +36,12 @@ def test_petfriends(selenium):
     field_email = selenium.find_element_by_id("email")
     field_email.click()
     field_email.clear()
-    field_email.send_keys("isaid.zx@gmail.com")
+    field_email.send_keys("<some_email>")
 
     field_pass = selenium.find_element_by_id("pass")
     field_pass.click()
     field_pass.clear()
-    field_pass.send_keys("qwerty1234")
+    field_pass.send_keys("<some_pass>")
     
     btn_submit = selenium.find_element_by_xpath("//button[@type='submit']")
     btn_submit.click()
