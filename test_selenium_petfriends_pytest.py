@@ -36,12 +36,12 @@ def test_petfriends(selenium):
     field_email = selenium.find_element_by_id("email")
     field_email.click()
     field_email.clear()
-    field_email.send_keys("<some_email>")
+    field_email.send_keys("isaid.zx@gmail.com")
 
     field_pass = selenium.find_element_by_id("pass")
     field_pass.click()
     field_pass.clear()
-    field_pass.send_keys("<some_pass>")
+    field_pass.send_keys("qwerty1234")
     
     btn_submit = selenium.find_element_by_xpath("//button[@type='submit']")
     btn_submit.click()
@@ -56,3 +56,7 @@ def test_petfriends(selenium):
 
     # Make the screenshot of browser window:
     selenium.save_screenshot('result_petfriends.png')
+
+def save_cookie(selenium, path):
+    with open(path, 'wb') as filehandler:
+        pickle.dump(selenium.get_cookies(), filehandler)
