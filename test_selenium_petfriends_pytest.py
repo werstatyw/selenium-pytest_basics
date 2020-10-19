@@ -46,17 +46,9 @@ def test_petfriends(selenium):
     btn_submit = selenium.find_element_by_xpath("//button[@type='submit']")
     btn_submit.click()
 
-
-  #  time.sleep(10)  # just for demo purposes, do NOT repeat it on real projects!
-
-    # Click Search:
-
-
-    time.sleep(10)  # just for demo purposes, do NOT repeat it on real projects!
+    # Save cookies of the browser after the login
+    with open('my_cookies.txt', 'wb') as cookies:
+        pickle.dump(selenium.get_cookies(), cookies)
 
     # Make the screenshot of browser window:
     selenium.save_screenshot('result_petfriends.png')
-
-def save_cookie(selenium, path):
-    with open(path, 'wb') as filehandler:
-        pickle.dump(selenium.get_cookies(), filehandler)
